@@ -1,0 +1,27 @@
+{% extends 'home.html' %}
+{% load static %}
+{% load bootstrap4 %}
+
+
+{% block header %}
+{% endblock %}
+
+
+{% block content %}
+  <div class="container" style="padding: 50px;">
+    <center><h1>Update Product</h1><center>
+  </div>
+
+  <div class="container-fluid" style="display: flex; justify-content: center; align-items: center; padding: 50px;">
+    <div class="row">
+      <form action="" class="form" autocomplete="off" method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <br>
+        <input type="submit" value="Update" class="btn btn-secondary">
+      </form>
+    </div>
+
+  </div>
+
+{% endblock %} 

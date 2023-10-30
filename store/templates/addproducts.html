@@ -1,0 +1,10 @@
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_messages %}
+
+
+  <form action="{% url 'addproducts'  %}" class="form" enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <button class="btn btn-success">Adicionar Produto</button>
+  </form>

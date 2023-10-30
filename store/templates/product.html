@@ -1,0 +1,44 @@
+{% extends 'home.html' %}
+
+{% block header %}
+{% endblock %}
+
+
+{% block content %}
+<div class="container" style="padding: 50px;">
+  <div class="card mb-3">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="{{product.image.url}}" class="card-img" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{product.name}}</h5>
+          <p class="card-text"><small class="text-muted">{{product.descirption}}</small></p>
+          {% if product.is_sale %}
+            <div class="d-flex justify-content-center small text-warning mb-2">
+              <div class="bi-star-fill"></div>
+                &nbsp;&nbsp;Sale!&nbsp;&nbsp;
+                <div class="bi-star-fill"></div>
+            </div>
+
+            <center><strike>${{product.price}}</strike>&nbsp; {{product.sale_price}}</center>
+            <br>
+          
+
+
+          {% else %}
+            <center>${{product.price}}</center>
+            {% endif %}
+        </div>
+        <center><a href="{% url 'home' %}" class="btn btn-secondary">Home</a></center>
+      </div>
+    </div>
+    
+  </div>
+  
+</div>
+
+ 
+</div>
+{% endblock %}

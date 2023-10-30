@@ -1,0 +1,29 @@
+{% extends 'home.html' %}
+{% load bootstrap4 %}
+{% load static %}
+{ bootstrap_css }
+
+
+
+{% block header %}
+{% endblock %}
+
+
+{% block content %}
+<div class="container" style="padding: 50px;">
+  <center><h1>Register New Category</h1><center>
+</div>
+
+<div class="container-fluid" style="display: flex; justify-content: center; align-items: center; padding: 50px;">
+  <div class="row">
+    <form action="{% url 'register' %}" class="form" autocomplete="off" method="post">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      <br>
+      <button class="btn btn-secondary">Register</button>
+    </form>
+  </div>
+
+</div>
+
+{% endblock %}

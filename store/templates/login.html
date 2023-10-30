@@ -1,0 +1,30 @@
+{% extends 'home.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_messages %}
+
+{% block header %}
+<header class="bg-dark py-5">
+  <div class="container px-4 px-lg-5 my-5">
+      <div class="text-center text-white">
+          <h1 class="display-4 fw-bolder">LOGIN</h1>
+          <p class="lead fw-normal text-white-50 mb-0">FAÇA O LOGIN</p>
+      </div>
+  </div>
+</header>
+{% endblock %}
+
+{% block content %}
+  
+<div class="container-fluid" style="display: flex; justify-content: center; align-items: center; padding: 50px;">
+  <div class="row">
+    <form action="{% url 'login' %}" class="form" autocomplete="off" method="post">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      <button class="btn btn-secondary" style="gap: 50px;">Login</button>
+    </form>
+  </div>
+
+</div>
+{% endblock %}

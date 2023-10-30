@@ -1,0 +1,23 @@
+{% extends 'home.html' %}
+
+
+
+{% block content %}
+
+
+    <title>Seu Carrinho de Compras</title>
+    <h1>Seu Carrinho de Compras</h1>
+    
+    <ul>
+        {% for item in cart_items %}
+            <li>
+                <strong>{{ item.product.name }}</strong>
+                <p>Quantidade: {{ item.quantity }}</p>
+                <p>Preço: R$ {{ item.product.price }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+    
+
+
+{% endblock %}
